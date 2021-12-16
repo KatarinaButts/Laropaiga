@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FrozenForest.unity
+    guid: 82991c2830ba40a4a86bb2cad04cca6f
+  - enabled: 1
+    path: Assets/Scenes/FrozenCave.unity
+    guid: 716982eec87ef9040b43ef83f12d03cc
+  - enabled: 1
+    path: Assets/Scenes/FrozenCaveRoom2.unity
+    guid: 84db6e8f73b0551428e7624a7b091d4a
+  - enabled: 1
+    path: Assets/Scenes/WitchsForest.unity
+    guid: cc5c9b7a7a2e445438a42d682757d01b
+  - enabled: 1
+    path: Assets/Scenes/ForestInsideHouses.unity
+    guid: 05a1a658098821947a2e3205bb7762cc
   m_configObjects: {}

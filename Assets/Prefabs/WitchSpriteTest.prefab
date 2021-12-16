@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee73430fc67d3547b66ed7c80bcb62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPoint: 
   projectilePrefab: {fileID: 5947836473587079645, guid: 75c73116cdcb59349a4c9809ff012ca0, type: 3}
   healthBar: {fileID: 0}
+  lookDirection: {x: 1, y: 0}
 --- !u!50 &1119386364609789509
 Rigidbody2D:
   serializedVersion: 4

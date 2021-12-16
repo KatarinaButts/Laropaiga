@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Dialogue>
+	<DialogueSection>
+		<Text>Hi. What's your name?</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+	<DialogueSection>
+		<Text>You finally made it. I see that you've learned how to start a conversation with people using the word Hanasu, but you'll need a few more words to get you started here.</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+	</DialogueSection>
+  <DialogueSection>
+    <Text>One important word that you'll need is Tatakau. This word means to fight or attack.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word>tatakau</Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>You'll need to use this word to fight back if you encounter a monster or if someone challenges you to a fight.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>You'll be able to gain more powers and words to help you in battles later.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>For now, let's test out your fighting skills.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight>true</Fight>
+    <WinDialogue>Fantastic! You may actually have a chance of saving this land.</WinDialogue>
+    <LoseDialogue>It looks like you may need more practice... Talk to me when you're ready to try again.</LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Remember, if you ever forget what a word means, you can review it in your dictionary.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>A few more handy tools will be available later in your dictionary as you progress on your journey.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>I'll also give you this help book.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Be sure to review information there and in your dictionary if you run into any trouble.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>For one last test to make sure you're ready, I'll need you to fight and defeat three enemies from the field to the south of here.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Once you do that, I'll should be able to use their power to remove the forcefield from the path to the icy mountains.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Come back once you've defeated three enemies from the fields to the south of here.</Text>
+    <FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+</Dialogue>
+

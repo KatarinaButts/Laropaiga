@@ -47,25 +47,61 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\LoadNewArea.cs" />
+    <Compile Include="Assets\Scripts\InventoryAndItemsScripts\InventoryControl.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\AssignWordButton.cs" />
+    <Compile Include="Assets\Scripts\InventoryAndItemsScripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\PuzzleScripts\IceMirrorPillar.cs" />
+    <Compile Include="Assets\Scripts\InteractableScripts\Interactable.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\GUITest.cs" />
     <Compile Include="Assets\Scripts\HumanAIController.cs" />
+    <Compile Include="Assets\Scripts\CanvasManager.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\MenuCameraController.cs" />
+    <Compile Include="Assets\Scripts\PuzzleScripts\IceLaserInput.cs" />
+    <Compile Include="Assets\Scripts\StateScripts\GameState.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\ButtonListControl.cs" />
+    <Compile Include="Assets\Scripts\InventoryAndItemsScripts\Item.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\WordButtonGroupController.cs" />
+    <Compile Include="Assets\Scripts\PlayerStartPoint.cs" />
+    <Compile Include="Assets\Scripts\WaitForUIButtons.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\ButtonListButton.cs" />
+    <Compile Include="Assets\Scripts\InventoryAndItemsScripts\ItemPickup.cs" />
+    <Compile Include="Assets\Scripts\StateScripts\SceneVariables.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\DialogueController.cs" />
+    <Compile Include="Assets\Scripts\StateScripts\ForcefieldState.cs" />
+    <Compile Include="Assets\Scripts\DictionaryScripts\DictionaryManager.cs" />
+    <Compile Include="Assets\Scripts\InventoryAndItemsScripts\InventoryButton.cs" />
+    <Compile Include="Assets\Scripts\PuzzleScripts\IceLaser.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Forcefield.cs" />
+    <Compile Include="Assets\Scripts\StateScripts\FriendshipState.cs" />
+    <Compile Include="Assets\Scripts\DictionaryScripts\DictionaryEntry.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\NonPlayerCharacter.cs" />
+    <Compile Include="Assets\Scripts\PuzzleScripts\IceMirrorRock.cs" />
+    <Compile Include="Assets\Scripts\OtherGUIScripts\WordButton.cs" />
+    <Compile Include="Assets\Scripts\InteractableScripts\NonPlayerCharacter.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\Slime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Resources\TextFiles\TestGhostDialogue.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Resources\TextFiles\MouseDialogue.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -74,7 +110,9 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Resources\TextFiles\HikariDialogue.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Resources\TextFiles\DictionaryEntries.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />

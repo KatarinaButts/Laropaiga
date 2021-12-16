@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 11be7e98e79328544ab4ae3c84bea2f9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Yrsa
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 50dc7deacfa76d2479fb85368c86e8c7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

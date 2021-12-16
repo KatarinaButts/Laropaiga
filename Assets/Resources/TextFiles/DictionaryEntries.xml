@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Dictionary>
+  <DictionaryEntry>
+    <wordJapanese>Hanasu</wordJapanese>
+    <wordEnglish>to talk; to speak</wordEnglish>
+    <pronunciation>ha-nah-soo</pronunciation>
+    <partOfSpeech>transitive verb</partOfSpeech>
+    <definition>use words or spoken language to convey information or have a conversation</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>hanasu</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Tatakau</wordJapanese>
+    <wordEnglish>to battle; to attack</wordEnglish>
+    <pronunciation>ta-ta-kah-oo</pronunciation>
+    <partOfSpeech>intransitive verb</partOfSpeech>
+    <definition>to fight against in order to try and win against an opponent</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>tatakau</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Hi</wordJapanese>
+    <wordEnglish>fire (controlled)</wordEnglish>
+    <pronunciation>hee</pronunciation>
+    <partOfSpeech>noun</partOfSpeech>
+    <definition>a burning that is of a controlled nature and can be used to heat objects; can also produce light</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>hi</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Ki</wordJapanese>
+    <wordEnglish>tree</wordEnglish>
+    <pronunciation>kee</pronunciation>
+    <partOfSpeech>noun</partOfSpeech>
+    <definition>a plant that is typically tall with bark, a trunk, leaves, and branches</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>ki</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Mawasu</wordJapanese>
+    <wordEnglish>rotate</wordEnglish>
+    <pronunciation>mah-wah-soo</pronunciation>
+    <partOfSpeech>transitive verb</partOfSpeech>
+    <definition>to cause an object to move around an axis.</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>mawasu</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Osu</wordJapanese>
+    <wordEnglish>to press; to push</wordEnglish>
+    <pronunciation>oh-soo</pronunciation>
+    <partOfSpeech>transitive verb</partOfSpeech>
+    <definition>to exert a force upon an object. Can be used on objects such as buttons or can be used for moving an object to an adjacent space (when possible).</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>osu</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Akeru</wordJapanese>
+    <wordEnglish>to open; to unwrap; to unlock</wordEnglish>
+    <pronunciation>ah-keh-roo</pronunciation>
+    <partOfSpeech>transitive verb</partOfSpeech>
+    <definition>to open or unlock an object. Can be used on objects such as doors or chests (when possible)</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>akeru</searchWord>
+  </DictionaryEntry>
+   <DictionaryEntry>
+    <wordJapanese>Shimeru</wordJapanese>
+    <wordEnglish>to close; to shut</wordEnglish>
+    <pronunciation>shee-meh-roo</pronunciation>
+    <partOfSpeech>transitive verb</partOfSpeech>
+    <definition>to close or shut an object. Can be used on objects such as doors or windows (when possible).</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>shimeru</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Aru</wordJapanese>
+    <wordEnglish>to exist (inanimate objects); to be (inanimate objects)</wordEnglish>
+    <pronunciation>ah-roo</pronunciation>
+    <partOfSpeech>intransitive verb</partOfSpeech>
+    <definition>the act of existing or being in existence for inanimate objects. Examples include plants and tables.</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>aru</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Iru</wordJapanese>
+    <wordEnglish>to exist (animate objects); to be (animate objects)</wordEnglish>
+    <pronunciation>ee-roo</pronunciation>
+    <partOfSpeech>intransitive verb</partOfSpeech>
+    <definition>the act of existing or being in existence for living and breathing beings or animate objects. Examples include people and animals.</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>iru</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+    <wordJapanese>Nai</wordJapanese>
+    <wordEnglish>to not exist (inanimate objects); to not be (inanimate objects)</wordEnglish>
+    <pronunciation>nah-ee</pronunciation>
+    <partOfSpeech>intransitive verb</partOfSpeech>
+    <definition>the act of not existing or not being in existence for inanimate objects. Examples include plants and tables.</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>nai</searchWord>
+  </DictionaryEntry>
+  <DictionaryEntry>
+     <wordJapanese>Inai</wordJapanese>
+    <wordEnglish>to not exist (animate objects); to not be (animate objects)</wordEnglish>
+    <pronunciation>ee-nah-ee</pronunciation>
+    <partOfSpeech>intransitive verb</partOfSpeech>
+    <definition>the act of not existing or not being in existence for living and breathing beings or animate objects. Examples include people and animals.</definition>
+    <image>Assets/InventoryTest/IceLaserInputTriangleDown.png</image>
+    <searchWord>inai</searchWord>
+  </DictionaryEntry>
+</Dictionary>

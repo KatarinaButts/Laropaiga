@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Dialogue>
+	<DialogueSection>
+		<Text>This is the first test dialogue section</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+	<DialogueSection>
+		<Text>This is the second test dialogue section</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+	</DialogueSection>
+	<DialogueSection>
+		<Text>This is the third test dialogue section. Learned the word Ki.</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+		<Word>Ki</Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+	</DialogueSection>
+	<DialogueSection>
+		<Text>This is the fourth test dialogue section. There would be a fight here.</Text>
+		<FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight>true</Fight>
+    <WinDialogue>This shows if you won the battle!</WinDialogue>
+    <LoseDialogue>This shows if you lose the battle!</LoseDialogue>
+	</DialogueSection>
+	<DialogueSection>
+		<Text>This is the fifth test dialogue section which displays if you talk again after you win the battle. Learned the word Mawasu (to rotate something).</Text>
+		<FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word>Mawasu</Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+	</DialogueSection>
+  <DialogueSection>
+    <Text>This is the sixth test dialogue section. </Text>
+    <FriendshipPointsNeeded>3</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+</Dialogue>

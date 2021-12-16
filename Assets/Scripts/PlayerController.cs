@@ -9,10 +9,14 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rigidbody2d;
 
+    private static bool playerExists;   //because of static, playerExists bool exists and is the same for all objects with PlayerController script
+    public string startPoint;
+
     public GameObject projectilePrefab;
     public HealthBar healthBar;
+    List<Item> inventory;
 
-    Vector2 lookDirection = new Vector2(1,0);
+    public Vector2 lookDirection = new Vector2(1,0);
 
     float horizontal;
     float vertical;
@@ -27,6 +31,8 @@ public class PlayerController : MonoBehaviour
     float timeInvincible = 2.0f;
     float invincibleTimer;
 
+    bool allowMovement;
+
     int level;
     int experienceToNextLevel;
     int currentExperience;
@@ -37,20 +43,36 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
 
-        speed = 3.0f;
+        speed = 4.0f;
 
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        inventory = new List<Item>();
 
         isInvincible = false;
 
+        allowMovement = true;
+
         level = 1;
         currentExperience = 0;
+
+        if(!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(allowMovement) { 
+
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         //Debug.Log(horizontal);
@@ -65,7 +87,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("LookX", lookDirection.x);
         animator.SetFloat("LookY", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
-
+        }
 
         if (isInvincible)
         {
@@ -83,19 +105,37 @@ public class PlayerController : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position - Vector2.up * 0.4f/* + Vector2.up * 0.01f*/, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+
+            //RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position - Vector2.up * 0.4f/* + Vector2.up * 0.01f*/, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position - Vector2.up * 0.4f/* + Vector2.up * 0.01f*/, lookDirection, 1.5f, LayerMask.GetMask("Interactable"));
+
+            if (hit.collider != null)
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if(interactable != null)
+                {
+                    Debug.Log("We hit something with an Interactable script");
+                    hit.collider.GetComponent<Interactable>().Interact(transform);
+                    //if(hit.collider.GetComponent<ItemPickup>())
+                    //{
+
+                    //}
+                }
+            }
             
-            
-            if(hit.collider != null)
+            /*
+            if (hit.collider != null)
             {
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if(character != null)
                 {
+                    Debug.Log("We hit an NPC GetComponent");
                     character.DisplayDialog();
                 }
                 //Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
             }
             //Interact();
+            */
         }
         
 
@@ -108,6 +148,11 @@ public class PlayerController : MonoBehaviour
         position.y = position.y + speed * vertical * Time.fixedDeltaTime;
 
         rigidbody2d.MovePosition(position);
+    }
+
+    public void setAllowMovement(bool allowToMove)
+    {
+        allowMovement = allowToMove;
     }
 
     public void ChangeHealth(int amount)

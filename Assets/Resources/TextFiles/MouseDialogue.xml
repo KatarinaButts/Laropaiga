@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Dialogue>
+	<DialogueSection>
+		<Text>Oi! Daijoubu?</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+	<DialogueSection>
+		<Text>Oh!</Text>
+		<FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+	</DialogueSection>
+  <DialogueSection>
+    <Text>You must be the one Hikari sought to save us. She must've messed up that teleportation spell again though... </Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>You'll want to talk with her to see what you need to do next.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Oh! That reminds me. You'll need to know the word Hanasu to be able to talk to people around here.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>I'll go ahead and add it to your word toolbar. Go ahead and try it now by clicking it and talking with me again.</Text>
+    <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
+    <Word>hanasu</Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Hanasu means to talk or speak and you'll need it to be able to talk with others in this realm.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Words have a special power in Laropaiga to allow you to interact with people and things.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Hikari lives in the forest to the west. You'll want to visit her as soon as possible.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>She should also be able to open up the other paths around here.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Now if you'll excuse me... All this talking has made me very sleepy...</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Zzz...</Text>
+    <FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+</Dialogue>
+
