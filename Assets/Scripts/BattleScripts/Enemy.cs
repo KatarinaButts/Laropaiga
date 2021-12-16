@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private int health = 0;
+    public int level = 1;
+    public int health = 0;
     public int maxHealth = 0;
     public int magic = 0;
     public string enemyName = "";
     public Item[] possibleDrops;
-    private HealthBar healthBar;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         else
         {
             health = Mathf.Clamp(health - damage, 0, maxHealth);
-            healthBar.SetHealth(health);
+            //healthBar.SetHealth(health);
         }
 
         Debug.Log(health + "/" + maxHealth);

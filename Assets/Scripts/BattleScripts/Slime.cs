@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
-    void Start()
+    void Awake()
     {
         maxHealth = 15;
+        health = maxHealth;
         magic = 0;
         enemyName = "Slime";
     }

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private static bool playerExists;   //because of static, playerExists bool exists and is the same for all objects with PlayerController script
     public string startPoint;
+    public string playerName;
 
     public GameObject projectilePrefab;
     public HealthBar healthBar;
@@ -23,9 +24,10 @@ public class PlayerController : MonoBehaviour
 
     float speed;
 
-    int maxHealth = 5;
+    int maxHealth = 20;
     int currentHealth;
-    public int health { get { return currentHealth; } }
+    int damage;
+    int magicPoints;
 
     bool isInvincible;
     float timeInvincible = 2.0f;
@@ -37,26 +39,47 @@ public class PlayerController : MonoBehaviour
     int experienceToNextLevel;
     int currentExperience;
 
-    // Start is called before the first frame update
+    public string getName { get { return playerName; } }
+    public int getLevel { get { return level; } }
+    public int getHealth { get { return currentHealth; } }
+    public int getMaxHealth { get { return maxHealth; } }
+    public int getDamage { get { return damage; } }
+    public int getMP { get { return magicPoints; } }
+
+    private void Awake()
+    {
+        playerName = this.name;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        speed = 4.0f;
+        damage = 5;
+        magicPoints = 0;
+        level = 1;
+        currentExperience = 0;
+    }
+
     void Start()
     {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
 
-        speed = 4.0f;
+        //!!!temp, change to allow a name to be input later
+        
 
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+
+      
+
         inventory = new List<Item>();
 
         isInvincible = false;
 
         allowMovement = true;
 
-        level = 1;
-        currentExperience = 0;
+       
 
-        if(!playerExists)
+
+
+        if (!playerExists)
         {
             playerExists = true;
             DontDestroyOnLoad(transform.gameObject);

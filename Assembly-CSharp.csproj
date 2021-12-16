@@ -54,12 +54,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LoadNewArea.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\Slime.cs" />
     <Compile Include="Assets\Scripts\InventoryAndItemsScripts\InventoryControl.cs" />
     <Compile Include="Assets\Scripts\OtherGUIScripts\AssignWordButton.cs" />
     <Compile Include="Assets\Scripts\InventoryAndItemsScripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\PuzzleScripts\IceMirrorPillar.cs" />
     <Compile Include="Assets\Scripts\InteractableScripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\OtherGUIScripts\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GUITest.cs" />
     <Compile Include="Assets\Scripts\HumanAIController.cs" />
     <Compile Include="Assets\Scripts\CanvasManager.cs" />
@@ -90,8 +92,9 @@
     <Compile Include="Assets\Scripts\PuzzleScripts\IceMirrorRock.cs" />
     <Compile Include="Assets\Scripts\OtherGUIScripts\WordButton.cs" />
     <Compile Include="Assets\Scripts\InteractableScripts\NonPlayerCharacter.cs" />
-    <Compile Include="Assets\Scripts\BattleScripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\BattleScripts\Slime.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\BattleEntity.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\BattleController.cs" />
+    <Compile Include="Assets\Scripts\BattleScripts\BattleHUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
