@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private DictionaryManager dictionary;
     [SerializeField]
     private WordButtonGroupController wordButtonGroupController;
+    [SerializeField]
+    private BattleController battleController;
 
     private List<DictionaryEntry> dictionaryEntries;
     private List<Dialogue> currDialogueList;
@@ -164,6 +166,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         KeyChecking();
+
+        //battle check test
+        if (inBattle == false && GameState.battleScene == true && (player.GetComponent<PlayerController>().getSteps >= 25.0f))
+        {
+            inBattle = true;
+            battleController.StartBattle();
+            //start battle
+            battleCamera.enabled = true;
+            mainCamera.enabled = false;
+            player.GetComponent<PlayerController>().setAllowMovement(false);
+        }
     }
 
     public bool getDisplayingDialogue()
@@ -305,26 +318,6 @@ public class GameManager : MonoBehaviour
         {
             this.GetComponent<Inventory>().addItem(this.GetComponent<Inventory>().findItem("TestEnglishName"));
         }
-
-
-        //!!!temp battle check
-        if (Input.GetKeyDown(KeyCode.B) && inBattle == false)
-        {
-            //start battle
-            battleCamera.enabled = true;
-            mainCamera.enabled = false;
-            player.GetComponent<PlayerController>().setAllowMovement(false);
-            inBattle = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.B) && inBattle == true)
-        {
-            //end battle
-            mainCamera.enabled = true;
-            battleCamera.enabled = false;
-            player.GetComponent<PlayerController>().setAllowMovement(true);
-            inBattle = false;
-        }
-        
 
         //Assign Word Panel closer
         if (Input.GetKeyDown(KeyCode.Escape) && displayingAssignWordButtonPanel == true)
@@ -551,6 +544,7 @@ public class GameManager : MonoBehaviour
                         break;
 
                 }
+
             }
            else
             {
@@ -572,5 +566,15 @@ public class GameManager : MonoBehaviour
         }
 
         return i;
+    }
+
+    public void EndBattle()
+    {
+        //end battle
+        mainCamera.enabled = true;
+        battleCamera.enabled = false;
+        player.GetComponent<PlayerController>().ResetSteps();
+        player.GetComponent<PlayerController>().setAllowMovement(true);
+        inBattle = false;
     }
 }

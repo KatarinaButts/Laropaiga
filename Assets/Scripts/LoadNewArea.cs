@@ -23,7 +23,7 @@ public class LoadNewArea : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //save information about this scene
-        GameState.SaveSceneVariables(SceneManager.GetActiveScene().name);              
+        GameState.SaveSceneVariables(SceneManager.GetActiveScene().name);
 
         if (collision.gameObject.gameObject.GetComponent<PlayerController>()) {
             SceneManager.LoadScene(levelToLoad);

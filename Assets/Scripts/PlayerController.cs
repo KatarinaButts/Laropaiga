@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     float vertical;
 
     float speed;
+    float steps;
 
     int maxHealth = 20;
     int currentHealth;
@@ -41,10 +42,12 @@ public class PlayerController : MonoBehaviour
 
     public string getName { get { return playerName; } }
     public int getLevel { get { return level; } }
+    public float getSteps { get { return steps; } }
     public int getHealth { get { return currentHealth; } }
     public int getMaxHealth { get { return maxHealth; } }
     public int getDamage { get { return damage; } }
     public int getMP { get { return magicPoints; } }
+
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         speed = 4.0f;
+        steps = 0.0f;
         damage = 5;
         magicPoints = 0;
         level = 1;
@@ -65,19 +69,11 @@ public class PlayerController : MonoBehaviour
 
         //!!!temp, change to allow a name to be input later
         
-
-
-      
-
         inventory = new List<Item>();
 
         isInvincible = false;
 
         allowMovement = true;
-
-       
-
-
 
         if (!playerExists)
         {
@@ -94,19 +90,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(allowMovement) { 
-
+        if (allowMovement) { 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        //Debug.Log(horizontal);
+        //Debug.Log("horizontal: " + horizontal);
+        //Debug.Log("vertical: " + vertical);
 
         Vector2 move = new Vector2(horizontal, vertical);
 
-        if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
-        {
-            lookDirection.Set(move.x, move.y);
-            lookDirection.Normalize();
-        }
+            if(!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+            {
+                lookDirection.Set(move.x, move.y);
+                lookDirection.Normalize();
+               
+            }
         animator.SetFloat("LookX", lookDirection.x);
         animator.SetFloat("LookY", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
@@ -167,15 +164,32 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rigidbody2d.position;
+
+        Vector2 prevPlayerPos = new Vector2(position.x, position.y);
+
         position.x = position.x + speed * horizontal * Time.fixedDeltaTime;
         position.y = position.y + speed * vertical * Time.fixedDeltaTime;
 
         rigidbody2d.MovePosition(position);
+
+        Vector2 newPlayerPos = new Vector2(position.x, position.y);
+
+        if(prevPlayerPos != newPlayerPos)
+        {
+            steps += 0.05f;
+            //Debug.Log("steps: " + steps);
+        }
     }
 
     public void setAllowMovement(bool allowToMove)
     {
         allowMovement = allowToMove;
+    }
+
+    public void ResetSteps ()
+    {
+        steps = 0;
+        Debug.Log("Steps Reset");
     }
 
     public void ChangeHealth(int amount)

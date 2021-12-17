@@ -8,12 +8,18 @@ public enum BattleState {STARTBATTLE, WONBATTLE, LOSTBATTLE, PLAYERTURN, ENEMYTU
 public class BattleController : MonoBehaviour
 {
     public BattleState battleState;
+    private static bool battleControllerExists;
 
     //!!!implement a list of entities and game objects + the logic behind them, so we can have more entities appear on screen
     //!!!we'll also need to reference the BattleController from GameManager to determine when battles need to happen
 
+    GameManager gameManager;
+
     public GameObject playerPrefab;
     public GameObject enemyPrefab;
+
+    GameObject playerObject;
+    GameObject enemyObject;
 
     public Transform playerFightPos;
     public Transform enemyFightPos;
@@ -23,6 +29,7 @@ public class BattleController : MonoBehaviour
 
     public Text battleDialogueText;
     public Transform battleDialoguePanel;
+    public Transform battleCanvas;
 
     public BattleHUD playerBattleHUD;
 
@@ -30,15 +37,31 @@ public class BattleController : MonoBehaviour
 
     void Start()
     {
+        battleCanvas.GetComponent<Canvas>().enabled = false;
+
+        if (!battleControllerExists)
+        {
+            battleControllerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void StartBattle()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        battleCanvas.GetComponent<Canvas>().enabled = true;
         battleState = BattleState.STARTBATTLE;
         StartCoroutine(SetupBattle());
-
     }
 
     IEnumerator SetupBattle()
     {
-        GameObject playerObject = Instantiate(playerPrefab, playerFightPos);
-        GameObject enemyObject = Instantiate(enemyPrefab, enemyFightPos);
+        playerObject = Instantiate(playerPrefab, playerFightPos);
+        enemyObject = Instantiate(enemyPrefab, enemyFightPos);
 
         playerEntity = playerObject.GetComponent<BattleEntity>();
         enemyEntity = enemyObject.GetComponent<BattleEntity>();
@@ -94,7 +117,7 @@ public class BattleController : MonoBehaviour
         if (isDead)
         {
             battleState = BattleState.LOSTBATTLE;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -134,7 +157,7 @@ public class BattleController : MonoBehaviour
         if(isDead)
         {
             battleState = BattleState.WONBATTLE;
-            EndBattle();
+            StartCoroutine(EndBattle());
         }
         else
         {
@@ -144,19 +167,29 @@ public class BattleController : MonoBehaviour
         }
     }
 
-    void EndBattle()
+    IEnumerator EndBattle()
     {
         if(battleState == BattleState.WONBATTLE)
         {
             battleDialogueText.enabled = true;
             battleDialoguePanel.GetComponent<Image>().enabled = true;
             battleDialogueText.text = "You won!";
+            yield return new WaitForSeconds(2f);
+            battleCanvas.GetComponent<Canvas>().enabled = false;
         }
         else if (battleState == BattleState.LOSTBATTLE)
         {
             battleDialogueText.enabled = true;
             battleDialoguePanel.GetComponent<Image>().enabled = true;
             battleDialogueText.text = "You lost!";
+            yield return new WaitForSeconds(2f);
+            battleCanvas.GetComponent<Canvas>().enabled = false;
         }
+        Destroy(playerObject);
+        Destroy(enemyObject);
+
+        firstTurn = true;
+
+        gameManager.EndBattle();
     }
 }

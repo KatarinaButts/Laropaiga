@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7827561c0f3091c46b9c5cc294d4377e, type: 3}
-  m_Color: {r: 0, g: 0.9716981, b: 0.039694488, a: 1}
+  m_Color: {r: 0.27096567, g: 0.9150943, b: 0.21150766, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  health: 0
   maxHealth: 0
   magic: 0
   enemyName: 

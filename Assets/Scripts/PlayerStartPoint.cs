@@ -29,6 +29,7 @@ public class PlayerStartPoint : MonoBehaviour
         
         //load information about the next scene
         GameState.LoadSceneVariables(SceneManager.GetActiveScene().name);
+
         }
     }
 

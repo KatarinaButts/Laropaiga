@@ -14,6 +14,8 @@ public static class GameState
     public static bool mainSceneForcefieldToRoyalCityPathActive = true;
     #endregion
 
+    public static bool battleScene = false;
+
     public static List<SceneVariables> sceneVariables = new List<SceneVariables>();
 
     public static void SaveSceneVariables(string currScene)
@@ -49,6 +51,11 @@ public static class GameState
 
     public static void LoadSceneVariables(string levelToLoad)
     {
+        //Check if this is a battle scene
+        CalcBattleSceneBool(levelToLoad);
+        //Reset the player's steps
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ResetSteps();
+
         Debug.Log("GameState sceneVariables.Count" + sceneVariables.Count);
         foreach(SceneVariables s in sceneVariables)
         {
@@ -184,6 +191,36 @@ public static class GameState
                 }
                 break;
             case "WitchsForest":
+                break;
+            default:
+                Debug.Log("No sceneName matches");
+                break;
+
+        }
+    }
+
+    public static void CalcBattleSceneBool(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "ForestInsideHouses":
+                battleScene = false;
+                break;
+            case "FrozenCave":
+                battleScene = false;
+                break;
+            case "FrozenCaveRoom2":
+                battleScene = false;
+                break;
+            case "FrozenForest":
+                battleScene = false;
+                break;
+            case "MainScene":
+                battleScene = false;
+                break;
+            case "WitchsForest":
+                battleScene = true;
+                Debug.Log("***BattleScene***");
                 break;
             default:
                 Debug.Log("No sceneName matches");
