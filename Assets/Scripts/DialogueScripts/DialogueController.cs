@@ -34,18 +34,18 @@ public class DialogueController : MonoBehaviour
         //Test
         foreach(Dialogue dialogueObject in dialogueList)
         {
-            Debug.Log(dialogueObject.getDialogueSection());
-            Debug.Log(dialogueObject.getFriendshipPointsReq());
-            Debug.Log(dialogueObject.getWordLearned());
-            Debug.Log(dialogueObject.getFightBool());
-            Debug.Log(dialogueObject.getWinDialogue());
-            Debug.Log(dialogueObject.getLoseDialogue());
+            Debug.Log(dialogueObject.GetDialogueSection());
+            Debug.Log(dialogueObject.GetFriendshipPointsReq());
+            Debug.Log(dialogueObject.GetWordLearned());
+            Debug.Log(dialogueObject.GetFightBool());
+            Debug.Log(dialogueObject.GetWinDialogue());
+            Debug.Log(dialogueObject.GetLoseDialogue());
         }
     }
 
     void Start()
     {
-        
+        //Empty
     }
 
     void Update()
@@ -68,7 +68,7 @@ public class DialogueController : MonoBehaviour
         foreach(XmlNode dialogueSection in dialogueSections)
         {
             Dialogue characterDialogueItem = new Dialogue();
-            characterDialogueItem.setData(dialogueSection);
+            characterDialogueItem.SetData(dialogueSection);
             dialogueList.Add(characterDialogueItem);
         }
     }
@@ -89,21 +89,16 @@ public class DialogueController : MonoBehaviour
                 //display the first dialogue
                 checkingDialoguePoint = false;
             }
-        }
-
-        //test where we should be for the conversation
-       
-
-
+        }    
 
         if (dialogueList.Count > i + 1)
         {
             testNext = dialogueList[i + 1];
-            if (curr.getFriendshipPointsReq() > currFriendshipPoints)    //we don't have enough friendship points to display, leave the conversation
+            if (curr.GetFriendshipPointsReq() > currFriendshipPoints)    //we don't have enough friendship points to display, leave the conversation
             {
 
             }
-            else if (testNext.getFriendshipPointsReq() < friendshipPoints && testNext.getFriendshipPointsReq() > curr.getFriendshipPointsReq())
+            else if (testNext.GetFriendshipPointsReq() < friendshipPoints && testNext.GetFriendshipPointsReq() > curr.GetFriendshipPointsReq())
             {
                 curr = testNext;
             }

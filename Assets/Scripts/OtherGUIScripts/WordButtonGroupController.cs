@@ -11,15 +11,7 @@ public class WordButtonGroupController : MonoBehaviour
     [SerializeField]
     private DictionaryManager dictionaryManager;
     
-    int buttonsActivated;
-
-    //private List<DictionaryEntry> entries;
-   
-
-    private void Awake()
-    {
-      
-    }
+    int buttonsActivated;   
 
     void Start()
     {
@@ -29,11 +21,6 @@ public class WordButtonGroupController : MonoBehaviour
         }
 
         buttonsActivated = 0;
-    }
-
-    void Update()
-    {
-        //Empty
     }
 
     public int getButtonsActive()
@@ -48,22 +35,15 @@ public class WordButtonGroupController : MonoBehaviour
 
     public void activateButton(int i, DictionaryEntry entry)
     {
-        Debug.Log("***Activating Button***");
         wordButtons[i].GetComponent<WordButton>().SetEntry(entry);
-        //words[i] = wordButtons[i].GetComponent<WordButton>();
-        //words[i].SetEntry(entry);
-        Debug.Log("word JapaneseWord: " + wordButtons[i].GetComponent<WordButton>().getDictionaryEntry().GetJapaneseWord());
+      
         wordButtons[i].SetActive(true);
         buttonsActivated += 1;
-        //if(i == 0)  //first one activated
-        //{
-        //    wordButtons[i].GetComponent<WordButton>().changeActiveState();
-        //}
     }
 
     public void UpdateButton(WordButton button, DictionaryEntry entry) 
     {
-        int buttonClickedIndex = -1; //didn't find
+        int buttonClickedIndex = -1;    //If it stays at -1, then we did not find the button
 
         for (int i = 0; i < wordButtons.Length; i++)
         {
@@ -73,9 +53,7 @@ public class WordButtonGroupController : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("buttonClickedIndex = " + buttonClickedIndex);
         bool activeState = wordButtons[buttonClickedIndex].GetComponent<WordButton>().getActiveState();
-        Debug.Log("activeState = " + activeState);
 
         wordButtons[buttonClickedIndex].GetComponent<WordButton>().SetEntry(entry);
 
@@ -86,10 +64,10 @@ public class WordButtonGroupController : MonoBehaviour
 
     public void ButtonClicked(WordButton button)
     {
-        int buttonClickedIndex = -1; //didn't find
+        int buttonClickedIndex = -1; //If it stays at -1, then we did not find the button
 
         //find button in array
-        for(int i = 0; i < wordButtons.Length; i++)
+        for (int i = 0; i < wordButtons.Length; i++)
         {
             if (wordButtons[i].name == button.name)
             {
@@ -98,17 +76,7 @@ public class WordButtonGroupController : MonoBehaviour
             }
         }
 
-        //int buttonClickedIndex = wordButtons.FindIndex(a => a.GetComponent<WordButton>().name == button.name);
-        //Debug.Log("***Found Word in WordButtonGroupController ButtonClicked()***");
-        //Debug.Log("wordButtons[0].GetComponent<WordButton>().name = " + wordButtons[1].GetComponent<WordButton>().name);
-
-
-        //Debug.Log("buttonClickedIndex = " + buttonClickedIndex);
         bool activeState = wordButtons[buttonClickedIndex].GetComponent<WordButton>().getActiveState();
-        Debug.Log("activeState = " + wordButtons[buttonClickedIndex].GetComponent<WordButton>().getActiveState());
-
-
-        Debug.Log("wordButtons[buttonClickedIndex] Japanese Word: " + wordButtons[buttonClickedIndex].GetComponent<WordButton>().getDictionaryEntry().GetJapaneseWord());
 
         if (activeState == true)
         {
@@ -129,7 +97,7 @@ public class WordButtonGroupController : MonoBehaviour
         }
         else if (activeState == false)
         {
-            Debug.Log("Button has been turned off");
+            //Debug.Log("Button has been turned off");
         }
 
     }

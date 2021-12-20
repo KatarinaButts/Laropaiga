@@ -29,7 +29,6 @@ public class MenuCameraController : MonoBehaviour
     void Update()
     {
         targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
-        //transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
         transform.position = targetPos;
 
     }

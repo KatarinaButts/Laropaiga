@@ -42,7 +42,6 @@ public class Projectile : MonoBehaviour
         HumanAIController e = other.collider.GetComponent<HumanAIController>();
         if (e!= null)
         {
-            e.Fix();
             Destroy(gameObject);
         }
         if (i != null)
@@ -50,20 +49,16 @@ public class Projectile : MonoBehaviour
             Vector2 prevRigidBody2dPos = rigidbody2d.position;
             Vector2 bounceLaserPos = i.BounceLaser(rigidbody2d.position, laserDir, boxCollider.size);
 
-            //temp fix
             char dir = i.getNewLaserDir();
-
-            //boxCollider.size
 
             if (bounceLaserPos == rigidbody2d.position)
             {
-                Debug.Log("Don't Bounce");
-                //don't bounce
+                //Don't bounce
                 Destroy(gameObject);
             }
             else
             {
-                Debug.Log("Bounce");
+                //Bounce
                 rigidbody2d.position = bounceLaserPos;
 
                 rigidbody2d.velocity = Vector2.zero;
@@ -84,39 +79,10 @@ public class Projectile : MonoBehaviour
                         break;
                     default:
                         Debug.Log("New Laser Dir failed");
-                        Debug.Log("Default to down");
+                        //Default to down
                         Launch(new Vector2(0.0f, -1.0f), projectileForce);
                         break;
                 }
-
-                //change direction based on the new position of the rigidbody2d.position
-                //below is wrong, using chars as a temp fix above
-                /*
-                if(rigidbody2d.position.x < prevRigidBody2dPos.x && rigidbody2d.position.y > prevRigidBody2dPos.y)
-                {
-                    Debug.Log("LaserBeam moved North");
-                    //for now just destroy, later change direction of force
-                    Destroy(gameObject);
-                    //Launch()
-                }
-                else if(rigidbody2d.position.x > prevRigidBody2dPos.x && rigidbody2d.position.y < prevRigidBody2dPos.y) {
-                    Debug.Log("LaserBeam moved South");
-                    //for now just destroy, later change direction of force
-                    Destroy(gameObject);
-                }
-                else if(rigidbody2d.position.x < prevRigidBody2dPos.x && rigidbody2d.position.y < prevRigidBody2dPos.y)
-                {
-                    Debug.Log("LaserBeam moved West");
-                    //for now just destroy, later change direction of force
-                    Destroy(gameObject);
-                }
-                else if(rigidbody2d.position.x > prevRigidBody2dPos.x && rigidbody2d.position.y > prevRigidBody2dPos.y)
-                {
-                    Debug.Log("LaserBeam moved East");
-                    //for now just destroy, later change direction of force
-                    Destroy(gameObject);
-                }
-                */
 
             }
         }
@@ -129,7 +95,5 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Debug.Log("Projectile collided with " + other.gameObject);
     }
 }

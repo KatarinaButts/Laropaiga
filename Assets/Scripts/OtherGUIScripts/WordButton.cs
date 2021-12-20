@@ -17,16 +17,6 @@ public class WordButton : MonoBehaviour
     DictionaryEntry entry;
     public bool activated = false;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     //Setters
     //Initial setup of entry
     public void SetEntry(DictionaryEntry newEntry)
@@ -60,23 +50,17 @@ public class WordButton : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Entered WordButton OnClick() method");
         if (activated == false)  //change to active on click
         {
-            Debug.Log("activated == " + activated);
             activated = true;
             GetComponent<Image>().sprite = activeImage;
             
         }
         else     //change to inactive on click
         {
-            Debug.Log("activated == " + activated);
             activated = false;
             GetComponent<Image>().sprite = inactiveImage;
         }
-
-        Debug.Log("activated at end of OnClick function == " + activated);
-        Debug.Log("this.getActiveState() == " + this.getActiveState());
 
         wordButtonGroupController.ButtonClicked(this);
     }

@@ -15,17 +15,6 @@ public class InventoryButton : MonoBehaviour
     private string itemType;
     private string itemDescription;
 
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void SetIcon(Sprite mySprite)
     {
         myIcon.sprite = mySprite;

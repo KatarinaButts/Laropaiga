@@ -16,17 +16,17 @@ public class BattleEntity : MonoBehaviour
     {
         possibleDrops = new Item[0];
     }
-    public Item[] getPossibleDrops()
+    public Item[] GetPossibleDrops()
     {
         return possibleDrops;
     }
 
-    public int getHealth()
+    public int GetHealth()
     {
         return health;
     }
 
-    public void setPlayerStats(int playerLevel, int playerHealth, int playerMaxHealth, int playerDamage, int playerMagic, string playerName)
+    public void SetPlayerStats(int playerLevel, int playerHealth, int playerMaxHealth, int playerDamage, int playerMagic, string playerName)
     {
         level = playerLevel;
         health = playerHealth;

@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //ToDo: Create and set up launch animator for player (WitchSprite for now)
-
     Animator animator;
     Rigidbody2D rigidbody2d;
 
-    private static bool playerExists;   //because of static, playerExists bool exists and is the same for all objects with PlayerController script
+    private static bool playerExists;   //playerExists is the same for all objects with PlayerController script
     public string startPoint;
     public string playerName;
 
@@ -66,8 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
-
-        //!!!temp, change to allow a name to be input later
         
         inventory = new List<Item>();
 
@@ -87,14 +83,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (allowMovement) { 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        //Debug.Log("horizontal: " + horizontal);
-        //Debug.Log("vertical: " + vertical);
 
         Vector2 move = new Vector2(horizontal, vertical);
 
@@ -118,47 +111,28 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        /* Add back into game once the word for throw has been added to the dictionary
         if(Input.GetKeyDown(KeyCode.C))
         {
             Launch();
         }
+        */
         
         if(Input.GetKeyDown(KeyCode.E))
         {
 
-            //RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position - Vector2.up * 0.4f/* + Vector2.up * 0.01f*/, lookDirection, 1.5f, LayerMask.GetMask("NPC"));
-            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position - Vector2.up * 0.4f/* + Vector2.up * 0.01f*/, lookDirection, 1.5f, LayerMask.GetMask("Interactable"));
+            RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position - Vector2.up * 0.4f, lookDirection, 1.5f, LayerMask.GetMask("Interactable"));
 
             if (hit.collider != null)
             {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if(interactable != null)
                 {
-                    Debug.Log("We hit something with an Interactable script");
+                    //Debug.Log("We hit something with an Interactable script");
                     hit.collider.GetComponent<Interactable>().Interact(transform);
-                    //if(hit.collider.GetComponent<ItemPickup>())
-                    //{
-
-                    //}
                 }
             }
-            
-            /*
-            if (hit.collider != null)
-            {
-                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
-                if(character != null)
-                {
-                    Debug.Log("We hit an NPC GetComponent");
-                    character.DisplayDialog();
-                }
-                //Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
-            }
-            //Interact();
-            */
         }
-        
-
     }
 
     private void FixedUpdate()
@@ -177,19 +151,23 @@ public class PlayerController : MonoBehaviour
         if(prevPlayerPos != newPlayerPos)
         {
             steps += 0.05f;
-            //Debug.Log("steps: " + steps);
         }
     }
 
     public void setAllowMovement(bool allowToMove)
     {
         allowMovement = allowToMove;
+        if(allowMovement == false)
+        {
+            horizontal = 0.0f;
+            vertical = 0.0f;
+            animator.SetFloat("Speed", 0);
+        }
     }
 
     public void ResetSteps ()
     {
         steps = 0;
-        Debug.Log("Steps Reset");
     }
 
     public void ChangeHealth(int amount)
@@ -216,30 +194,19 @@ public class PlayerController : MonoBehaviour
         {
             level += 1;
             currentExperience = 0;
-            //figure out  experienceToNextLevel  calculation
-            //figure out  maxHealth  calculation
-            //figure out defense calculation??
-            //figure out attack calculation??
         }
 
     }
 
-    void Interact()
-    {
-        //add, based on direction, check for an object in front of the player
-        //object.Interact();
-
-
-        //animator.SetTrigger("Interact");  //!!!once we actually have interact animations available
-    }
-
+    //Test function for launching an item from the player
+    /*
     void Launch()
     {
-        //!!!Edit > Project Setings > Input > axes > Fire1      to make it more compatible with other devices
-        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position/* + Vector2.up * 0.2f*/, Quaternion.identity);
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position, Quaternion.identity);
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(lookDirection, 300);
         animator.SetTrigger("Launch");
     }
+    */
 }

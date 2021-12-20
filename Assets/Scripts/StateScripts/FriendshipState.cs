@@ -9,13 +9,8 @@ public class FriendshipState
 
     public FriendshipState(string name, int friendship)
     {
-        Debug.Log("FriendshipState initialization");
         friendshipName = name;
         friendshipLevel  = friendship;
-
-        Debug.Log("friendshipName = " + friendshipName);
-        Debug.Log("friendshipLevel = " + friendshipLevel);
-
     }
 
     public string GetNPCName()

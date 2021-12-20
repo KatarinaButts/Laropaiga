@@ -12,7 +12,6 @@ public class PlayerStartPoint : MonoBehaviour
 
     public string pointName;
 
-    // Start is called before the first frame update
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
@@ -24,18 +23,9 @@ public class PlayerStartPoint : MonoBehaviour
 
         theCamera = FindObjectOfType<CameraController>();
         theCamera.transform.position = new Vector3(transform.position.x, transform.position.y, theCamera.transform.position.z);
-
-        Debug.Log("About to load scene variables from PlayerStartPoint with active scene as: " + SceneManager.GetActiveScene().name);
         
-        //load information about the next scene
+        //Load information about the next scene
         GameState.LoadSceneVariables(SceneManager.GetActiveScene().name);
-
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

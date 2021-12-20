@@ -11,13 +11,11 @@ public class Inventory : MonoBehaviour
 
     public static Inventory instance;
 
-    //private static bool inventoryExists;
-
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one instance of Inventory found!");
+            //Debug.LogWarning("More than one instance of Inventory found!");
             Destroy(gameObject);
 
         }
@@ -25,18 +23,7 @@ public class Inventory : MonoBehaviour
         {
             instance = this;
         }
-
-        //if (!gameManagerExists)
-        //{
-        //   gameManagerExists = true;
-        //    DontDestroyOnLoad(transform.gameObject);
-        //}
-      
-
     }
-
-
-
     #endregion
 
     int space = 20;
@@ -50,7 +37,6 @@ public class Inventory : MonoBehaviour
         {
             if(items.Count >= space)
             {
-                Debug.Log("Not enough room.");
                 return false;
             }
             items.Add(item);

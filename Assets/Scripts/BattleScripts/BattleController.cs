@@ -10,9 +10,6 @@ public class BattleController : MonoBehaviour
     public BattleState battleState;
     private static bool battleControllerExists;
 
-    //!!!implement a list of entities and game objects + the logic behind them, so we can have more entities appear on screen
-    //!!!we'll also need to reference the BattleController from GameManager to determine when battles need to happen
-
     GameManager gameManager;
 
     public GameObject playerPrefab;
@@ -68,7 +65,7 @@ public class BattleController : MonoBehaviour
 
         PlayerController playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
-        playerEntity.setPlayerStats(playerController.getLevel, playerController.getHealth, playerController.getMaxHealth, playerController.getDamage, playerController.getMP, playerController.getName);
+        playerEntity.SetPlayerStats(playerController.getLevel, playerController.getHealth, playerController.getMaxHealth, playerController.getDamage, playerController.getMP, playerController.getName);
 
         battleDialogueText.text = "A wild " + enemyEntity.entityName + " approaches.";
 
@@ -97,7 +94,7 @@ public class BattleController : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        //!!!add some more logic
+        //Add some more logic for enemies to either fight or heal below a certain health percentage here
 
         battleDialogueText.enabled = true;
         battleDialoguePanel.GetComponent<Image>().enabled = true;
@@ -109,8 +106,6 @@ public class BattleController : MonoBehaviour
         battleDialoguePanel.GetComponent<Image>().enabled = false;
 
         bool isDead = playerEntity.TakeDamage(enemyEntity.damage);
-
-        //yield return new WaitForSeconds(.5f);
 
         playerBattleHUD.SetHealth(playerEntity.health);
 
@@ -127,8 +122,7 @@ public class BattleController : MonoBehaviour
 
     }
 
-
-    public void OnTatakauPressed()
+    public void OnFightPressed()
     {
         if(battleState != BattleState.PLAYERTURN)
         {
@@ -151,10 +145,9 @@ public class BattleController : MonoBehaviour
 
         bool isDead = enemyEntity.TakeDamage(playerEntity.damage);
 
-        //update enemyHUD for when we can have health over their heads later
+        //Update enemyHUD for when we display health over their heads here
 
-
-        if(isDead)
+        if (isDead)
         {
             battleState = BattleState.WONBATTLE;
             StartCoroutine(EndBattle());
@@ -169,8 +162,10 @@ public class BattleController : MonoBehaviour
 
     IEnumerator EndBattle()
     {
+        bool battleWon = false;
         if(battleState == BattleState.WONBATTLE)
         {
+            battleWon = true;
             battleDialogueText.enabled = true;
             battleDialoguePanel.GetComponent<Image>().enabled = true;
             battleDialogueText.text = "You won!";
@@ -179,6 +174,7 @@ public class BattleController : MonoBehaviour
         }
         else if (battleState == BattleState.LOSTBATTLE)
         {
+            battleWon = false;
             battleDialogueText.enabled = true;
             battleDialoguePanel.GetComponent<Image>().enabled = true;
             battleDialogueText.text = "You lost!";
@@ -190,6 +186,6 @@ public class BattleController : MonoBehaviour
 
         firstTurn = true;
 
-        gameManager.EndBattle();
+        gameManager.EndBattle(battleWon);
     }
 }

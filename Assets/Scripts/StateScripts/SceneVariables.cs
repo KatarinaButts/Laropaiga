@@ -33,23 +33,13 @@ public class SceneVariables
 
     public void CheckFriendshipStatesFromScene()
     {
-        Debug.Log("CheckFriendshipStatesFromScene()");
-
-        Debug.Log("GetActiveScene: " + SceneManager.GetActiveScene().name);
-
-        //SceneManager.GetActiveScene().GetRootGameObjects().to    ToList().ForEach(g => results.AddRange(g.GetComponentsInChildren<T>()
-
-
         NonPlayerCharacter[] NPCSceneArray = Object.FindObjectsOfType<NonPlayerCharacter>();
         FriendshipState friendshipState = null;
 
-        if (NPCSceneArray.Length > 0)   //check if we have the info for NPCs in the scene
+        if (NPCSceneArray.Length > 0)   //Check if we have the info for NPCs in the scene
         {
-            Debug.Log("NPCSceneArray.Length > 0");
             if (friendshipStates.Count > 0)
             {
-                Debug.Log("friendshipStates.Count > 0");
-
                 foreach (NonPlayerCharacter c in NPCSceneArray)
                 {
                     for (int i = 0; i < friendshipStates.Count; i++)
@@ -57,57 +47,41 @@ public class SceneVariables
                         if (friendshipStates[i].GetNPCName().CompareTo(c.name) == 0)
                         {
                             friendshipStates[i].SetFriendshipAmount(c.getFriendshipPoints());
-                            Debug.Log("NPC Name: " + c.name);
-                            Debug.Log("NPC Friendship Points: " + c.getFriendshipPoints());
                         }
                         else
                         {
-                            Debug.Log("Initializing NPC info");
-                            //initialize the friendshipState
-                            friendshipState = new FriendshipState(c.name, c.getFriendshipPoints());
+                            friendshipState = new FriendshipState(c.name, c.getFriendshipPoints()); //Initialize the friendshipState
+                            friendshipStates.Add(friendshipState);  //Add it to the list
 
-                            //add it to the list
-                            friendshipStates.Add(friendshipState);
                         }
                     }
                 }
             }
             else
             {
-                Debug.Log("friendshipStates.Count == " + friendshipStates.Count);
                 foreach (NonPlayerCharacter c in NPCSceneArray)
                 {
-                    Debug.Log("Initializing NPC info");
-
-                    //initialize the friendshipState
+                    //Initialize the friendshipState
                     friendshipState = new FriendshipState(c.name, c.getFriendshipPoints());
 
-                    //add it to the list
+                    //Add it to the list
                     friendshipStates.Add(friendshipState);
                 }
             }
         }
-        else {  //there are no NPCs in the scene, so we just return
-            Debug.Log("No NPCs available");
-
+        else {
             return;
         }
     }
 
     public void UpdateFriendshipStatesInScene()
     {
-        Debug.Log("UpdateFriendshipStatesInScene()");
-
-
         NonPlayerCharacter[] NPCSceneArray = Object.FindObjectsOfType<NonPlayerCharacter>();
 
         if (NPCSceneArray.Length > 0)   //check if we have the info for NPCs in the scene
         {
-            Debug.Log("NPCSceneArray.Length > 0");
-
             if (friendshipStates.Count > 0)
             {
-                Debug.Log("friendshipStates.Count > 0");
                 foreach (NonPlayerCharacter c in NPCSceneArray)
                 {
                     for (int i = 0; i < friendshipStates.Count; i++)
@@ -121,7 +95,7 @@ public class SceneVariables
                         }
                         else
                         {
-                            Debug.Log("Something has gone wrong. Check");
+                            Debug.Log("Something has gone wrong. Check UpdateFriendshipStatesInScene()");
                         }
                     }
                 }
@@ -140,8 +114,8 @@ public class SceneVariables
                 }
             }
         }
-        else
-        {  //there are no NPCs in the scene, so we just return
+        else    //there are no NPCs in the scene, so we just return
+        {  
             Debug.Log("No NPCs available");
             return;
         }
@@ -162,19 +136,4 @@ public class SceneVariables
 
         return checkFriendshipState;
     }
-
-    /*
-    void addVariableState(string type, GameObject checkObject)
-    {
-        switch(type)
-        {
-            case "NPC":
-
-                break;
-            default:
-                Debug.Log("Did not find the object type");
-                break;
-        }
-    }
-    */
 }

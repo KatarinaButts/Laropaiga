@@ -16,12 +16,12 @@ public class Enemy : MonoBehaviour
         possibleDrops = new Item[0];
     }
 
-    public Item[] getPossibleDrops()
+    public Item[] GetPossibleDrops()
     {
         return possibleDrops;
     }
 
-    public int getHealth()
+    public int GetHealth()
     {
         return health;
     }
@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
         else
         {
             health = Mathf.Clamp(health - damage, 0, maxHealth);
-            //healthBar.SetHealth(health);
         }
 
         Debug.Log(health + "/" + maxHealth);

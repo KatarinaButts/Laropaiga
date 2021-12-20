@@ -18,8 +18,6 @@ public class BattleHUD : MonoBehaviour
 
         healthSlider.maxValue = entity.maxHealth;
         healthSlider.value = entity.health;
-
-
     }
 
     public void SetHealth(int newHealth)

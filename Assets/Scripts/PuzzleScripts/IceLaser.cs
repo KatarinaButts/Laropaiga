@@ -72,21 +72,17 @@ public class IceLaser : Interactable
                 }
             }
         }
-        
-        
     }
 
     public override void Interact(Transform PlayerTransform)
     {
         base.Interact(PlayerTransform);
-        Debug.Log("Interacting with " + transform.name);
 
         ChangeSprite();
     }
 
     void ChangeSprite()
     {
-        Debug.Log("Changing Ice Laser Sprite");
         if (renderer.sprite.name == IceLaserUpSprite.name)
         {
             renderer.sprite = IceLaserActivatedUpSprite;
@@ -96,7 +92,6 @@ public class IceLaser : Interactable
         }
         else if (renderer.sprite.name == IceLaserDownSprite.name)
         {
-            Debug.Log("IceLaserDown");
             renderer.sprite = IceLaserActivatedDownSprite;
             offset = new Vector2(0, -1.0f);
             laserDirection = new Vector2(0.0f, -1.0f);
@@ -141,11 +136,7 @@ public class IceLaser : Interactable
 
     void Launch()
     {
-        Debug.Log("Launching Laser");
-        Debug.Log("rigidbody2d.position: " + rigidbody2d.position.x + ", " + rigidbody2d.position.y);
-        Debug.Log("rigidbody2d + offset: " + (rigidbody2d.position.x + offset.x) + ", " + (rigidbody2d.position.y + offset.y));
-
-        GameObject projectileObject = Instantiate(laserPrefab, rigidbody2d.position + offset/* + Vector2.up * 0.2f*/, Quaternion.identity);
+        GameObject projectileObject = Instantiate(laserPrefab, rigidbody2d.position + offset, Quaternion.identity);
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(laserDirection, laserSpeed);

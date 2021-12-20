@@ -1,0 +1,58 @@
+GameManager
+    Implement player battles and battleWon bool (so we can see if the player gains money and friendship point(s))
+    Implement gameOver sequence
+    Implement inventory item use and removal
+
+GameState
+    Implement ways to break the other forcefields located in the MainScene
+
+NonPlayerCharacter
+    Add UI character name text section and image to DialogueController UI element
+    Add description/tooltip UI box if the player does not know the dictionary word or is not currently using it
+        Example: "You don't know the word for this or it's not currently your active word"
+
+IceMirrorRock
+    Add description/tooltip UI box if the player does not know the dictionary word or is not currently using it
+        Example: "You don't know the word for this or it's not currently your active word"
+
+BattleController
+    Add more logic for the EnemyTurn function (fight or heal below a certain health percentage)
+    Update enemyHUD for when we can have health over their heads
+    Add other button controls for magic, items, and run
+    Implement a list of entities and game objects + the logic behind them, so we can have more entities appear on screen
+
+HumanAIController
+    Test class for enemies that can run into and hurt the player
+
+PlayerController ToDo:
+    Create and set up launch animator for player (WitchSprite for now)
+    Allow a player name to be input by the user
+    Complete LevelUp section
+        experienceToNextLevel calculation
+        maxHealth calculation
+        defense calculation
+        attack calculation
+    Enable launch function and key press once the word for throw has been added to the dictionary
+        For Launch function, update Edit > Project Setings > Input > axes > Fire1 to make it more compatible with other devices
+
+Enemy
+    Add heal functionality in ChangeHealth()
+
+Inventory
+    Bring up a description/tooltip UI box if the inventory is full and a player tries to add an item to their inventory
+
+DictionaryEntry
+    Add and implement the following:
+        string verbConjugationType;  
+        string example;               
+        string kanjiImage;
+        audio
+
+InventoryControl
+    change the "descriptionText.text..." section to   "if(type == ...)" so we can display either definition panel or stats panel
+
+IceMirrorPillar
+    have new camera move from player location to this mirror pillar location
+    play animation showing pillar breaking into the ground
+    destroy and add bools in the GameState class and IceMirrorPillar Start function checking this like we did with the forcefields
+    

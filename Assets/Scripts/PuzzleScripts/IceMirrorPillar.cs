@@ -18,20 +18,12 @@ public class IceMirrorPillar : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        
-    }
-
     public void LaserInputActivated()
     {
         inputAmount += 1;
 
         if(IceLaserInputArray.Length == inputAmount)
         {
-            //have new camera move from player location to this mirror pillar location
-            //play animation showing pillar breaking into the ground
-
             //destroy this pillar
             Destroy(gameObject);
         }

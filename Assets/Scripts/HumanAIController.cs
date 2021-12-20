@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HumanAIController : MonoBehaviour
 {
+    //Test class for possible future enemies that can run into and hurt the player
     float speed;
 
     bool vertical;
@@ -18,7 +19,6 @@ public class HumanAIController : MonoBehaviour
     Animator animator;
     Rigidbody2D rigidbody2D;
 
-    // Start is called before the first frame update
     void Start()
     {
         speed = 2.0f;
@@ -54,7 +54,6 @@ public class HumanAIController : MonoBehaviour
         {
             timer = changeTime;
             vertical = !(vertical);
-            //direction = direction;
             count = 0;
         }
     }
@@ -83,7 +82,6 @@ public class HumanAIController : MonoBehaviour
         rigidbody2D.MovePosition(position);
     }
 
-    //test function, can remove later
      void OnCollisionEnter2D(Collision2D other)
     {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
@@ -94,10 +92,12 @@ public class HumanAIController : MonoBehaviour
         }
     }
 
+    /*
     public void Fix()
     {
         broken = false;
         rigidbody2D.simulated = false;
     }
+    */
 
 }

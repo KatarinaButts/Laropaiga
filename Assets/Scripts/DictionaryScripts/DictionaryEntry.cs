@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Xml;
 
-public class DictionaryEntry/* : MonoBehaviour*/
+public class DictionaryEntry
 {
     string wordJapanese;
     string wordEnglish;
@@ -13,28 +13,7 @@ public class DictionaryEntry/* : MonoBehaviour*/
     string image;
     string searchWord;
     bool learned;
-
-    //ToDo:
-    //string verbConjugationType;  
-    //string example;               
-    //string kanjiImage;
-    //audio
-    /*
-    void Awake()
-    {
-        learned = false;
-    }
-
-    void Start()
-    {
-        //Empty
-    }
-
-    void Update()
-    {
-        //Empty
-    }
-    */
+   
     //Setters
     //Initial setup of entry
     public void SetData(XmlNode dictSection)
@@ -82,7 +61,6 @@ public class DictionaryEntry/* : MonoBehaviour*/
     {
         return image;
     }
-
     public string GetSearchWord()
     {
         return searchWord;

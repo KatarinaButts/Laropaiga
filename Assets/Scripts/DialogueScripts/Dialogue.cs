@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Xml;
 
-public class Dialogue/* : MonoBehaviour*/
+public class Dialogue
 {
     string dialogue = "";
     int friendshipPointsReq = 0;
@@ -14,9 +14,8 @@ public class Dialogue/* : MonoBehaviour*/
     string playerWinDialogue = "";
     string playerLoseDialogue = "";
 
-    public void setData(XmlNode curItemNode)
+    public void SetData(XmlNode curItemNode)
     {
-        //characterName = charName;
         dialogue = curItemNode["Text"].InnerText;
         friendshipPointsReq = int.Parse(curItemNode["FriendshipPointsNeeded"].InnerText);
         wordLearned = curItemNode["Word"].InnerText;
@@ -32,32 +31,32 @@ public class Dialogue/* : MonoBehaviour*/
         playerWinDialogue = curItemNode["WinDialogue"].InnerText;
         playerLoseDialogue = curItemNode["LoseDialogue"].InnerText;
     }
-    public string getDialogueSection()
+    public string GetDialogueSection()
     {
         return dialogue;
     }
 
-    public string getWordLearned()
+    public string GetWordLearned()
     {
         return wordLearned;
     }
 
-    public int getFriendshipPointsReq()
+    public int GetFriendshipPointsReq()
     {
         return friendshipPointsReq;
     }
 
-    public bool getFightBool()
+    public bool GetFightBool()
     {
         return fight;
     }
 
-    public string getWinDialogue()
+    public string GetWinDialogue()
     {
         return playerWinDialogue;
     }
 
-    public string getLoseDialogue()
+    public string GetLoseDialogue()
     {
         return playerLoseDialogue;
     }

@@ -13,13 +13,11 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
-        Debug.Log("Picking up " + item.nameJapanese + ".");
         //Add to inventory
         bool wasPickedUp = Inventory.instance.addItem(item);
         
         if(wasPickedUp)
         {
-            //Destroy the item
             Destroy(gameObject);
         }
        
