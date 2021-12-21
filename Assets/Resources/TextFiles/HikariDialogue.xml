@@ -41,56 +41,8 @@
     <LoseDialogue></LoseDialogue>
   </DialogueSection>
   <DialogueSection>
-    <Text>For now, let's test out your fighting skills.</Text>
+    <Text>For now, let's test out your fighting skills. If you can defeat three enemies from the field to the south of here, I should be able to use their power to remove the forcefield from the path to the icy mountains.</Text>
     <FriendshipPointsNeeded>0</FriendshipPointsNeeded>
-    <Word></Word>
-    <Fight>true</Fight>
-    <WinDialogue>Fantastic! You may actually have a chance of saving this land.</WinDialogue>
-    <LoseDialogue>It looks like you may need more practice... Talk to me when you're ready to try again.</LoseDialogue>
-  </DialogueSection>
-  <DialogueSection>
-    <Text>Remember, if you ever forget what a word means, you can review it in your dictionary.</Text>
-    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
-    <Word></Word>
-    <Fight></Fight>
-    <WinDialogue></WinDialogue>
-    <LoseDialogue></LoseDialogue>
-  </DialogueSection>
-  <DialogueSection>
-    <Text>A few more handy tools will be available later in your dictionary as you progress on your journey.</Text>
-    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
-    <Word></Word>
-    <Fight></Fight>
-    <WinDialogue></WinDialogue>
-    <LoseDialogue></LoseDialogue>
-  </DialogueSection>
-  <DialogueSection>
-    <Text>I'll also give you this help book.</Text>
-    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
-    <Word></Word>
-    <Fight></Fight>
-    <WinDialogue></WinDialogue>
-    <LoseDialogue></LoseDialogue>
-  </DialogueSection>
-  <DialogueSection>
-    <Text>Be sure to review information there and in your dictionary if you run into any trouble.</Text>
-    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
-    <Word></Word>
-    <Fight></Fight>
-    <WinDialogue></WinDialogue>
-    <LoseDialogue></LoseDialogue>
-  </DialogueSection>
-  <DialogueSection>
-    <Text>For one last test to make sure you're ready, I'll need you to fight and defeat three enemies from the field to the south of here.</Text>
-    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
-    <Word></Word>
-    <Fight></Fight>
-    <WinDialogue></WinDialogue>
-    <LoseDialogue></LoseDialogue>
-  </DialogueSection>
-  <DialogueSection>
-    <Text>Once you do that, I'll should be able to use their power to remove the forcefield from the path to the icy mountains.</Text>
-    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
     <Word></Word>
     <Fight></Fight>
     <WinDialogue></WinDialogue>
@@ -98,7 +50,47 @@
   </DialogueSection>
   <DialogueSection>
     <Text>Come back once you've defeated three enemies from the fields to the south of here.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Remember, if you ever forget what a word means, you can review it in your dictionary.</Text>
     <FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>A few more handy tools will be available later in your dictionary as you progress on your journey.</Text>
+    <FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>I'll also give you this help book.</Text>
+    <FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>Be sure to review information there and in your dictionary if you run into any trouble.</Text>
+    <FriendshipPointsNeeded>2</FriendshipPointsNeeded>
+    <Word></Word>
+    <Fight></Fight>
+    <WinDialogue></WinDialogue>
+    <LoseDialogue></LoseDialogue>
+  </DialogueSection>
+  <DialogueSection>
+    <Text>The path to the icy mountains should now be open. You can get there by going north from the field you started in.</Text>
+    <FriendshipPointsNeeded>1</FriendshipPointsNeeded>
     <Word></Word>
     <Fight></Fight>
     <WinDialogue></WinDialogue>

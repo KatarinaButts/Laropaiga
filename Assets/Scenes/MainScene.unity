@@ -19234,6 +19234,7 @@ MonoBehaviour:
   battleController: {fileID: 1326827134}
   mainCamera: {fileID: 1076048935}
   battleCamera: {fileID: 480622592}
+  mainUIOverlayCanvas: {fileID: 1315874581}
   menuCanvas: {fileID: 1546127724}
   dictionaryRightUIPanel: {fileID: 879501387}
   dictionaryLeftUIPanel: {fileID: 2070651337}

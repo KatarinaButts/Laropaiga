@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     int showDictWordButtons;
 
     //UI Panels
+    [SerializeField]
+    private Transform mainUIOverlayCanvas;
+
     public Transform menuCanvas;
     public Transform dictionaryRightUIPanel;
     public Transform dictionaryLeftUIPanel;
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
         //Locks mouse cursor to the game window (but still allows it to move from the center) for dual-monitor use
         Cursor.lockState = CursorLockMode.Confined;
 
+        mainUIOverlayCanvas.gameObject.SetActive(true);
         //Makes sure the menu is closed when the scene starts
         menuRightUIPanel.gameObject.SetActive(false);
         menuCameraImage.gameObject.SetActive(false);
@@ -124,6 +128,10 @@ public class GameManager : MonoBehaviour
         {
             inBattle = true;
             player.GetComponent<PlayerController>().setAllowMovement(false);
+
+            mainUIOverlayCanvas.gameObject.SetActive(false);
+            wordSelectionPanel.gameObject.SetActive(false);
+
             battleController.StartBattle();
             //Start battle
             battleCamera.enabled = true;
@@ -206,7 +214,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Menu opener
-        else if (Input.GetKeyDown(KeyCode.Escape) && menuOpen == false)
+        else if (inBattle == false && Input.GetKeyDown(KeyCode.Escape) && menuOpen == false)
         {
             OpenMenu();
         }
@@ -396,6 +404,10 @@ public class GameManager : MonoBehaviour
         //end battle
         mainCamera.enabled = true;
         battleCamera.enabled = false;
+
+        mainUIOverlayCanvas.gameObject.SetActive(true);
+        wordSelectionPanel.gameObject.SetActive(true);
+
         player.GetComponent<PlayerController>().ResetSteps();
         player.GetComponent<PlayerController>().setAllowMovement(true);
         inBattle = false;

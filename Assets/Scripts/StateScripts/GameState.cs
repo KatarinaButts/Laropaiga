@@ -7,9 +7,13 @@ public static class GameState
 {
     //Bools for all the forcefields 
     #region Forcefields
+    //Main scene
     public static bool mainSceneForcefieldToWitchActive = true;
     public static bool mainSceneForcefieldToSnowyMountainActive = true;
     public static bool mainSceneForcefieldToRoyalCityPathActive = true;
+
+    //Witch's Forest
+    public static bool witchsForestForcefieldToSlimeField = true;
     #endregion
 
     public static bool battleScene = false;
@@ -103,6 +107,12 @@ public static class GameState
                 }
                 break;
             case "WitchsForest":
+                switch(forcefieldName)
+                {
+                    case "ForcefieldToSlimeField":
+                        isActive = witchsForestForcefieldToSlimeField;
+                        break;
+                }
                 break;
             default:
                 Debug.Log("No sceneName matches");
@@ -116,6 +126,16 @@ public static class GameState
         switch (sceneName)
         {
             case "ForestInsideHouses":
+                switch (NPCName)
+                {
+                    case "Hikari":
+                        if (NPCFriendshipPoints == 1)
+                        {
+                            //Set this variable false, so the forcefield inactivate itself when going to the WitchsForest scene
+                            witchsForestForcefieldToSlimeField = false;
+                        }
+                        break;
+                }
                 break;
             case "FrozenCave":
                 break;
